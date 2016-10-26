@@ -1,5 +1,6 @@
 
 <?php
+/*
 function clearstring($string){
 	//removes unwanted characters from any variable when called
 	$string=stripslashes($string);  //unquotes the string
@@ -10,6 +11,7 @@ function clearstring($string){
 	
 	return $string;
 }
+*/
 if(empty($_POST)) header('location:register.php');
 else{
  include('../db.php');
@@ -24,8 +26,8 @@ else{
 		header("location:../register.php?signinerror=true");
 	}else{
 		//username available, insert into table user
-		$username=clearstring($username);
-		$password=clearstring($password); 
+		$username=mysqli_real_escape_string($conn, $username);
+		$password=mysqli_real_escape_string($conn, $password); 
 		$sql="insert into user(username,password) ";
 		$sql.="values('$username','$password')";
 		if($conn->query($sql)===TRUE){
