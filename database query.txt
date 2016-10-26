@@ -1,0 +1,13 @@
+
+CREATE DATABASE IF NOT EXISTS `credentials`;
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(200) NOT NULL,
+    PRIMARY KEY (userID)
+) 
+
+
+INSERT INTO `user` (`userID`, `username`, `password`) VALUES
+(1, 'admin', 'password');
