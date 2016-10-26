@@ -31,6 +31,9 @@ if(!empty($_GET["loginerror"])) $errormessage='<div class="alert alert-danger" r
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <div>
+            <a href="register.php" class="text-center new-account">Create an account </a>
+        </div>
     <?php if(!$errormessage=='') echo $errormessage;?>
 </form>
     

@@ -5,6 +5,7 @@ function clearstring($string){
 	$string=stripslashes($string);  //unquotes the string
 	$string=htmlentities($string);  //html-tags
 	$string=strip_tags($string);    //html/php tags
+	//$string = mysqli_real_escape_string($string);
 	
 	return $string;
 }
@@ -18,7 +19,7 @@ include('db.php');
  //query the database table user to check if username+password
  //are correct
  $sql="select username from user where username='$username' and ";
- $sql.="password='$password' ";
+ $sql.="password='$password'";
  $result=$conn->query($sql);  //runs the SQL query, returns $result
  if ($result->num_rows > 0){
 	 //username and password were correct
